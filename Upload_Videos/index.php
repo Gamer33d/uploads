@@ -3,7 +3,14 @@ include('db.php');
 
 $mensagem = false;
 
+
+
+
+
+
+if(isset($_POST['upload'])){
 $vi_name = mysqli_real_escape_string($conexao, $_POST['vi_name']);
+}
 
 
 if(isset($_POST['upload'])):
@@ -44,14 +51,13 @@ endif;
 <body>
     <h1><a href="video.php">VIDEOS</a></h1>
 
-    <form action="index.php" method="post" enctype="multipart/form-data">
+    <form action="index.php" method="POST" enctype="multipart/form-data">
     <input type="text" name="vi_name" placeholder="Nome do video" required maxlength="40">
     <input type="file" name="file" >
     <input type="submit" name="upload" value="UPLOAD">
 
     </form>
 
-    
 </body>
 </html>
 
